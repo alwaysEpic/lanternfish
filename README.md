@@ -1,5 +1,7 @@
 # lanternfish
 
+All answers have been answered in the word document.
+
 PART1
 
 I have included the arrays noted in the word document as files to run.

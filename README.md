@@ -1,6 +1,9 @@
 # lanternfish
 I have included the arrays noted in the word document as files to run
 
+testfile.txt is the small list used for the examples in the text
+providedData.txt is the noted test data
+
 fishSchool.py [Number of Days to Simulate] [Fish School Data File]
 
 e.g. 

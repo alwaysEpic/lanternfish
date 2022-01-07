@@ -28,9 +28,9 @@ Each python script works for Part 1, they do not work for Part 2
 
 PART2
 
-After no luck in optimizing the python algorithm, I slept on it and decided to try C the next morning. I realized halfway through the process that i should be using a rotation of bins. This could also be written in Python
+After no luck in optimizing the python algorithm, I slept on it and decided to try C the next day. I realized halfway through the process that I should be using a rotation of bins. This could also be written in Python
 
-I have 2 programs build for the different test cases, they can be run as follows
+I have 2 programs built for the different test cases, they can be run as follows
 
 ./fishApp_provided [number of days to simulate]
 

@@ -1,5 +1,5 @@
 # lanternfish
-# I have included the arrays noted in the word document as files to run
+I have included the arrays noted in the word document as files to run
 
 fishSchool.py [Number of Days to Simulate] [Fish School Data File]
 

@@ -38,6 +38,7 @@ I have 2 programs build for the different test cases, they can be run as follows
 e.g.
 
 ./fishApp_provided 256
+
 ./fishApp_provided 80
 
 The file is simple as well and can be rebuilt using:

@@ -33,6 +33,7 @@ After no luck in optimizing the python algorithm, I slept on it and decided to t
 I have 2 programs build for the different test cases, they can be run as follows
 
 ./fishApp_provided [number of days to simulate]
+
 ./fishApp_test [number of days to simulate]
 
 e.g.

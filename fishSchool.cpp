@@ -5,6 +5,9 @@
 #include <algorithm>
 #include <array>
 #include <cstdlib>
+#include <fstream>
+#include <vector>
+
 
 //rotate class used from here: https://stackoverflow.com/questions/40817533/shift-array-elements-in-c-without-loop
 template <class Container>
@@ -26,33 +29,36 @@ void rotate(Container& container, int n){
 
 int main( int argc, char *argv[] ){
 	int numDays;
-	//std::array<int,300> inputData = {3,4,1,1,5,1,3,1,1,3,5,1,1,5,3,2,4,2,2,2,1,1,1,1,5,1,1,1,1,1,3,1,1,5,4,1,1,1,4,1,1,1,1,2,3,2,5,1,5,1,2,1,1,1,4,1,1,1,1,3,1,1,3,1,1,1,1,1,1,2,3,4,2,1,3,1,1,2,1,1,2,1,5,2,1,1,1,1,1,1,4,1,1,1,1,5,1,4,1,1,1,3,3,1,3,1,3,1,4,1,1,1,1,1,4,5,1,1,3,2,2,5,5,4,3,1,2,1,1,1,4,1,3,4,1,1,1,1,2,1,1,3,2,1,1,1,1,1,4,1,1,1,4,4,5,2,1,1,1,1,1,2,4,2,1,1,1,2,1,1,2,1,5,1,5,2,5,5,1,1,3,1,4,1,1,1,1,1,1,1,4,1,1,4,1,1,1,1,1,2,1,2,1,1,1,5,1,1,3,5,1,1,5,5,3,5,3,4,1,1,1,3,1,1,3,1,1,1,1,1,1,5,1,3,1,5,1,1,4,1,3,1,1,1,2,1,1,1,2,1,5,1,1,1,1,4,1,3,2,3,4,1,3,5,3,4,1,4,4,4,1,3,2,4,1,4,1,1,2,1,3,1,5,5,1,5,1,1,1,5,2,1,2,3,1,4,3,3,4,3};
-	std::array<int, 5> inputData = {3,4,3,1,2};
-	if (argc == 2){
-		////The toggle doesn't work due to different array size and the fact I have to declare it before the if. I am sure there is a way around, if I were to spend more time on it I would just have it read from file so that other inputs could be added at will. 
-		// if(strcmp("provided",argv[2])){
-		// 	std::array<int,300> inputData = {3,4,1,1,5,1,3,1,1,3,5,1,1,5,3,2,4,2,2,2,1,1,1,1,5,1,1,1,1,1,3,1,1,5,4,1,1,1,4,1,1,1,1,2,3,2,5,1,5,1,2,1,1,1,4,1,1,1,1,3,1,1,3,1,1,1,1,1,1,2,3,4,2,1,3,1,1,2,1,1,2,1,5,2,1,1,1,1,1,1,4,1,1,1,1,5,1,4,1,1,1,3,3,1,3,1,3,1,4,1,1,1,1,1,4,5,1,1,3,2,2,5,5,4,3,1,2,1,1,1,4,1,3,4,1,1,1,1,2,1,1,3,2,1,1,1,1,1,4,1,1,1,4,4,5,2,1,1,1,1,1,2,4,2,1,1,1,2,1,1,2,1,5,1,5,2,5,5,1,1,3,1,4,1,1,1,1,1,1,1,4,1,1,4,1,1,1,1,1,2,1,2,1,1,1,5,1,1,3,5,1,1,5,5,3,5,3,4,1,1,1,3,1,1,3,1,1,1,1,1,1,5,1,3,1,5,1,1,4,1,3,1,1,1,2,1,1,1,2,1,5,1,1,1,1,4,1,3,2,3,4,1,3,5,3,4,1,4,4,4,1,3,2,4,1,4,1,1,2,1,3,1,5,5,1,5,1,1,1,5,2,1,2,3,1,4,3,3,4,3};
-		// }
-		// else{
-		// 	std::array<int, 5> inputData = {3,4,3,1,2};
-		// }
+	std::vector<int> inputData;
+	
+	if (argc == 3){
 
+		std::ifstream inputFile(argv[2]);
+		int num;
+
+	    if(!(inputFile)) std::cout<<"error: file could not be read.\n";
+	    
+	    while(inputFile >> num) {
+	        inputData.push_back(num);
+	        inputFile.ignore();
+	    }
+	    
 		numDays = atoi(argv[1]);
 		if (numDays == 0){
-			printf("Invalid input\nfishApp_(name)[Number of Days to Simulate]\n"); //[test or provided] 
+			printf("Invalid input\nfishApp [Number of Days to Simulate] [filename]\n"); 
 			exit(1);
 		}
 	}
 	else{
-		printf("fishApp_(name) [Number of Days to Simulate]\n"); // [test or provided] 
+		printf("fishApp [Number of Days to Simulate] [filename]\n");
 		exit(1);
 	}
 
 	std::array<float,9> birthArray = {0,0,0,0,0,0,0,0,0};
 
 	//setup initial birth array using buckets for the number of fish in each cycle
-	for(int i = 0; i < (sizeof(inputData)/sizeof(inputData[0])); i++){ 
-		//printf("%f ",inputData[i]);
+	for(int i=0; i < inputData.size(); i++){ 
+		//printf("%d ",inputData[i]);
 		birthArray[inputData[i]]++;
 	}
 

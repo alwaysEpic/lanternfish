@@ -30,6 +30,7 @@ int main( int argc, char *argv[] ){
 	int numDays;
 	std::vector<int> inputData;
 	
+	//command line input and parsing
 	if (argc == 3){
 
 		std::ifstream inputFile(argv[2]);
@@ -53,6 +54,7 @@ int main( int argc, char *argv[] ){
 		exit(1);
 	}
 
+	//creating birth array and converting the input data into the buckets
 	std::array<float,9> birthArray = {0,0,0,0,0,0,0,0,0};
 
 	//setup initial birth array using buckets for the number of fish in each cycle
@@ -69,12 +71,13 @@ int main( int argc, char *argv[] ){
 		// }
 		// printf("\n");
 
+		//rotates the array left, rolling at position 0
 		rotate(birthArray,1);
-
+		//if no fish give birth, then no fish where in bucket 0. If fish are born the fish in bucket zero are then restarted at day 7.
 		birthArray[6] += birthArray[8];
 	
 	}
-
+	//sum the total number of fish
 	double total = birthArray[0] + birthArray[1] + birthArray[2] + birthArray[3] + birthArray[4] + birthArray[5] + birthArray[6] + birthArray[7] + birthArray[8];
 	printf("days: %d\n",numDays);
 	printf("total: %f\n", total);

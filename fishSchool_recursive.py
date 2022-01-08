@@ -11,6 +11,7 @@ def fishLifeTracker(School, numDays):
 	
 	newSchool=[]
 	#newFish=0 #used to match output described in document
+	#cycles through all fish for that day creating new fish as needed
 	for fish in School:
 		fish -=1
 

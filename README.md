@@ -30,17 +30,19 @@ PART2
 
 After no luck in optimizing the python algorithm, I slept on it and decided to try C the next day. I realized halfway through the process that I should be using a rotation of bins. This could also be written in Python
 
-I have 2 programs built for the different test cases, they can be run as follows
+I have built test programs for linux, mac and windows.  
 
-./fishApp_provided [number of days to simulate]
+Mac: ./fishApp_mac [number of days to simulate] [Fish School Data File]
 
-./fishApp_test [number of days to simulate]
+Linux: ./fishApp_linux [number of days to simulate] [Fish School Data File]
+
+Windows: fishSchool [number of days to simulate] [Fish School Data File]
 
 e.g.
 
-./fishApp_provided 256
+./fishApp_linux 80 testFile.txt
 
-./fishApp_provided 80
+./fishApp_mac 256 providedData.txt
 
 The file is simple as well and can be rebuilt using:
 

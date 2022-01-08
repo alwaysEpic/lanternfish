@@ -1,19 +1,22 @@
 import sys
 import time
-import numpy as np
+#import numpy as np
 from multiprocessing.pool import ThreadPool as Pool
 start_time = time.time()
 
-pool_size = 4  # your "parallelness"
+
+#README: this file documents my different attempts at optimization. The left over code is commented out. 
+#There is not a significant difference in speed with this file and the loop.
+#if you just want to see the working code the loops file is cleaner. 
+
+#pool_size = 4  # your "parallelness"
 
 #testData = 3,4,1,1,5,1,3,1,1,3,5,1,1,5,3,2,4,2,2,2,1,1,1,1,5,1,1,1,1,1,3,1,1,5,4,1,1,1,4,1,1,1,1,2,3,2,5,1,5,1,2,1,1,1,4,1,1,1,1,3,1,1,3,1,1,1,1,1,1,2,3,4,2,1,3,1,1,2,1,1,2,1,5,2,1,1,1,1,1,1,4,1,1,1,1,5,1,4,1,1,1,3,3,1,3,1,3,1,4,1,1,1,1,1,4,5,1,1,3,2,2,5,5,4,3,1,2,1,1,1,4,1,3,4,1,1,1,1,2,1,1,3,2,1,1,1,1,1,4,1,1,1,4,4,5,2,1,1,1,1,1,2,4,2,1,1,1,2,1,1,2,1,5,1,5,2,5,5,1,1,3,1,4,1,1,1,1,1,1,1,4,1,1,4,1,1,1,1,1,2,1,2,1,1,1,5,1,1,3,5,1,1,5,5,3,5,3,4,1,1,1,3,1,1,3,1,1,1,1,1,1,5,1,3,1,5,1,1,4,1,3,1,1,1,2,1,1,1,2,1,5,1,1,1,1,4,1,3,2,3,4,1,3,5,3,4,1,4,4,4,1,3,2,4,1,4,1,1,2,1,3,1,5,5,1,5,1,1,1,5,2,1,2,3,1,4,3,3,4,3
-
 #replicates once every 7 days
-
 #fish on different schedules
-
 #new fish takes 9 days to reproduce first time (2+) and does not reduce day count until day after berth
 
+##multiprocessing try
 # def schoolThread(School):
 # 	newSchool=[]
 # 	for fish in School:

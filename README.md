@@ -22,7 +22,7 @@ fishSchool_recursive was my first build
 
 fishSchool_alltheloops was the second
 
-fishSchool_optimized was where I tried to optimize enough for the massive exponential issue, and it didn't work
+fishSchool_optimized was where I tried to optimize enough for the massive exponential issue, and it didn't work. This file can be skipped if you are only looking at implementation. I did try to comment out all of my attempts and they were working in most cases just slower. 
 
 Each python script works for Part 1, they do not work for Part 2
 

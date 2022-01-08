@@ -3,16 +3,13 @@ import time
 start_time = time.time()
 
 #testData = 3,4,1,1,5,1,3,1,1,3,5,1,1,5,3,2,4,2,2,2,1,1,1,1,5,1,1,1,1,1,3,1,1,5,4,1,1,1,4,1,1,1,1,2,3,2,5,1,5,1,2,1,1,1,4,1,1,1,1,3,1,1,3,1,1,1,1,1,1,2,3,4,2,1,3,1,1,2,1,1,2,1,5,2,1,1,1,1,1,1,4,1,1,1,1,5,1,4,1,1,1,3,3,1,3,1,3,1,4,1,1,1,1,1,4,5,1,1,3,2,2,5,5,4,3,1,2,1,1,1,4,1,3,4,1,1,1,1,2,1,1,3,2,1,1,1,1,1,4,1,1,1,4,4,5,2,1,1,1,1,1,2,4,2,1,1,1,2,1,1,2,1,5,1,5,2,5,5,1,1,3,1,4,1,1,1,1,1,1,1,4,1,1,4,1,1,1,1,1,2,1,2,1,1,1,5,1,1,3,5,1,1,5,5,3,5,3,4,1,1,1,3,1,1,3,1,1,1,1,1,1,5,1,3,1,5,1,1,4,1,3,1,1,1,2,1,1,1,2,1,5,1,1,1,1,4,1,3,2,3,4,1,3,5,3,4,1,4,4,4,1,3,2,4,1,4,1,1,2,1,3,1,5,5,1,5,1,1,1,5,2,1,2,3,1,4,3,3,4,3
-
 #replicates once every 7 days
-
 #fish on different schedules
-
 #new fish takes 9 days to reproduce first time (2+) and does not reduce day count until day after berth
 
 def fishLifeTracker(School, numDays):
 	
-	while numDays > 0: #using while loop reduces cost of 80 by 0.5s more than recursion. https://stackoverflow.com/questions/2651112/is-recursion-ever-faster-than-looping
+	while numDays > 0: #using while loop (in python) reduces cost of 80 by ~0.5s more than recursion. https://stackoverflow.com/questions/2651112/is-recursion-ever-faster-than-looping
 		numDays -= 1
 		newSchool=[]
 		for fish in School:
@@ -23,7 +20,6 @@ def fishLifeTracker(School, numDays):
 			elif fish == -1:
 				newSchool.append(6)
 				newSchool.append(8)
-				#newFish += 1
 			else:
 				print("invalid fish reproductive cycle number")
 		#print(newSchool)
